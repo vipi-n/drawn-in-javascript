@@ -135,4 +135,4 @@ dinosaur/
 
 ---
 
-Made with Claude Opus 5.5 in Cursor.
+Made with Claude Sonnet 5.5
