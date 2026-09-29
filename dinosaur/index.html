@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Still Here — a hand-drawn history in under a minute</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <style>
+    :root { --paper: #f3efe2; --ink: #2a3680; --bg: #e4ded0; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink);
+      font-family: "Patrick Hand", "Noteworthy", "Chalkboard SE", "Comic Sans MS", cursive; }
+    body { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 12px; }
+    .stage { position: relative; width: min(94vw, calc(100vh - 110px)); aspect-ratio: 1; background: var(--paper);
+      box-shadow: 0 10px 40px rgba(60, 50, 30, .18), 0 2px 6px rgba(60, 50, 30, .12); border-radius: 6px; overflow: hidden; }
+    canvas { width: 100%; height: 100%; display: block; }
+    .overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 12px; background: rgba(243, 239, 226, .55); cursor: pointer; transition: opacity .3s; }
+    .overlay.hidden { opacity: 0; pointer-events: none; }
+    .big { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--ink); display: grid; place-items: center;
+      background: #fffdf6; box-shadow: 4px 5px 0 rgba(42, 54, 128, .18); transition: transform .15s; }
+    .overlay:hover .big { transform: scale(1.06) rotate(-3deg); }
+    .big svg { width: 46px; height: 46px; margin-left: 8px; }
+    .overlay p { margin: 0; font-size: 26px; }
+    .bar { width: min(94vw, calc(100vh - 110px)); display: flex; align-items: center; gap: 10px; font-size: 20px; }
+    button { font: inherit; color: var(--ink); background: #fffdf6; border: 2px solid var(--ink); border-radius: 10px;
+      padding: 3px 12px; cursor: pointer; box-shadow: 2px 2px 0 rgba(42, 54, 128, .2); white-space: nowrap; }
+    button:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 rgba(42, 54, 128, .2); }
+    button:disabled { opacity: .45; cursor: default; }
+    input[type=range] { flex: 1; accent-color: var(--ink); }
+    #time { min-width: 92px; text-align: right; font-variant-numeric: tabular-nums; }
+    .rec { color: #df3a2e; border-color: #df3a2e; }
+    .shot .bar, .shot .overlay { display: none !important; }
+    .shot { padding: 0; }
+    .shot .stage { width: 100vw; height: 100vh; box-shadow: none; border-radius: 0; }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <canvas id="film" width="1080" height="1080"></canvas>
+    <div class="overlay" id="overlay">
+      <div class="big"><svg viewBox="0 0 24 24"><path d="M5 3 L20 12 L5 21 Z" fill="none" stroke="#2a3680" stroke-width="2.2" stroke-linejoin="round"/></svg></div>
+      <p id="status">composing the music…</p>
+    </div>
+  </div>
+  <div class="bar">
+    <button id="play" disabled>play</button>
+    <input id="scrub" type="range" min="0" max="47.5" step="0.0416667" value="0">
+    <span id="time">0.0 / 47.5</span>
+    <button id="loop" title="Loop (L)">loop: on</button>
+    <button id="mute" title="Mute (M)">sound: on</button>
+    <button id="rec" title="Record a video file with sound" disabled>save video</button>
+  </div>
+  <script src="js/ink.js"></script>
+  <script src="js/characters.js"></script>
+  <script src="js/scenes.js"></script>
+  <script src="js/music.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
