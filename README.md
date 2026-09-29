@@ -14,7 +14,6 @@ Both films were made with **Claude Opus 5.5** in Cursor, from the prompts below.
 ## Still Curious: human evolution in under a minute
 
 ### Prompt
-
 > The history of human evolution in under one minute. Draw every frame of this animation in JavaScript. Here is the video reference, I pasted the video in the current app folder. I want the visuals and animation like this. Also add music to this animation.
 
 A follow-up prompt:
