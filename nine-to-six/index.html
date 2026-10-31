@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3eee3">
+  <title>Nine to Six</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <style>
+    :root { --cream:#f3eee3; --ink:#3a2f28; --accent:#e0603f; }
+    * { box-sizing:border-box; }
+    html,body { margin:0; min-height:100%; background:#e4ded0; color:var(--ink); font-family:'Patrick Hand','Noteworthy','Chalkboard SE',cursive; }
+    body { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:15px; padding:18px; }
+    .stage { position:relative; width:min(94vw,calc(100vh - 115px)); aspect-ratio:1; overflow:hidden; border-radius:6px; box-shadow:0 10px 40px #3c321e2d; background:var(--cream); }
+    canvas { width:100%; height:100%; display:block; }
+    .overlay { position:absolute; inset:0; display:grid; place-content:center; justify-items:center; gap:16px; background:#f3eee38c; cursor:pointer; transition:opacity .35s; text-align:center; }
+    .overlay.hidden { opacity:0; pointer-events:none; }
+    .play-icon { display:grid; place-items:center; width:108px; height:108px; border-radius:50%; background:#fffdf6; color:var(--ink); border:3px solid var(--ink); font:64px/1 Arial,sans-serif; box-shadow:4px 5px 0 #3a2f2830; padding-left:8px; transition:transform .2s; }
+    .overlay:hover .play-icon { transform:scale(1.07); }
+    .overlay p { margin:0; font-size:26px; }
+    .bar { width:min(94vw,calc(100vh - 115px)); display:flex; align-items:center; gap:9px; font-size:19px; }
+    button { border:2px solid var(--ink); color:var(--ink); background:#fffdf6; border-radius:9px; padding:3px 10px; font:inherit; white-space:nowrap; cursor:pointer; }
+    button:hover { background:#f6e6d6; }
+    button:disabled { opacity:.5; cursor:default; }
+    input[type=range] { flex:1; min-width:30px; accent-color:var(--accent); }
+    #time { min-width:96px; font-variant-numeric:tabular-nums; text-align:right; }
+    #rec.active { color:#df3a2e; border-color:#df3a2e; }
+    .shot { padding:0; }
+    .shot .stage { width:100vw; height:100vh; box-shadow:none; border-radius:0; }
+    .shot .overlay,.shot .bar { display:none; }
+    @media(max-width:650px) { body{padding:8px;gap:8px}.bar{width:100%;flex-wrap:wrap;justify-content:center}.bar input{flex-basis:55%}.stage{width:min(100%,calc(100vh - 125px))} }
+  </style>
+</head>
+<body>
+  <div class="stage"><canvas id="film" width="1080" height="1080" aria-label="Animated cut-paper film: Nine to Six, a day in the life of an office worker"></canvas>
+    <div id="overlay" class="overlay" role="button" tabindex="0" aria-label="Play film"><span class="play-icon">▶</span><p id="status">Composing an original score…</p></div>
+  </div>
+  <div class="bar">
+    <button id="play" disabled>play</button>
+    <input id="scrub" type="range" min="0" max="187.5" step="0.0416667" value="0" aria-label="Film position">
+    <span id="time">0.0 / 187.5</span>
+    <button id="loop">loop: off</button>
+    <button id="mute">sound: on</button>
+    <button id="rec" disabled>save video</button>
+  </div>
+  <script src="js/paper.js"></script>
+  <script src="js/person.js"></script>
+  <script src="js/set.js"></script>
+  <script src="js/apartment.js"></script>
+  <script src="js/city.js"></script>
+  <script src="js/metro.js"></script>
+  <script src="js/office.js"></script>
+  <script src="js/lunch.js"></script>
+  <script src="js/night.js"></script>
+  <script src="js/film.js"></script>
+  <script src="js/music.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

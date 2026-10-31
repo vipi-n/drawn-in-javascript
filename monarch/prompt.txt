@@ -1,0 +1,225 @@
+PROMPT — "MONARCH: the life cycle of a butterfly"
+(animated short, 2 min 17 s, 1:1 square 1080x1080, 30 fps, stereo 48 kHz, original music + sound design)
+
+This file holds (1) the full production prompt that describes the finished video, so it can be recreated, and
+(2) the request that was used to arrive at it.
+
+
+====================================================================================================================
+PART 1 — THE PROMPT
+====================================================================================================================
+
+Create a richly coloured, cinematic motion-animation film about the complete life cycle of the monarch butterfly:
+the egg laid on milkweed, the caterpillar and its five growth stages, the chrysalis and the transformation inside it,
+the emergence of the butterfly, its summer life, the four generations of a year, the long migration of the
+"super generation" to the mountains of central Mexico, the winter there, and the journey home that starts the cycle
+again. Every step is SHOWN with animation; text is limited to short chapter tags, short fact chips and counters.
+The music changes with every situation and carries one recurring theme through the whole story.
+
+FORMAT
+- 1080 x 1080 square, 30 fps, 137.5 seconds (55 bars at 96 BPM, one bar = 2.5 s), stereo 48 kHz.
+- Every frame is drawn with JavaScript code (Node.js + canvas). No photos, no video footage, no image assets.
+- Watermark: X logo + "@vipinxtwt" in the bottom-left corner of every frame.
+
+LOOK
+- Luminous storybook illustration: clean vector shapes with soft gradient shading, thin dark outlines on the
+  animals, glowing light (sun discs, god rays, bloom), floating pollen motes, out-of-focus bokeh discs and blurred
+  foreground plants for depth of field, a warm paper grain and a soft vignette over every frame.
+- Each chapter has its own colour script: violet-to-gold dawn; fresh green macro leaf worlds; golden hour;
+  moonlit blue night; an indigo x-ray world with cyan and magenta light; a pink-gold dawn for the emergence;
+  bright summer blue; autumn oranges; misty blue-green mountains; a twilight-violet finale with gold.
+- TREES are painted, not geometric: every broadleaf tree is a recursively branched trunk whose crown is built from
+  scalloped leafy clumps shaded as ONE lit volume (light from the upper left, dark underside, thousands of leaf
+  dabs), with a full rounded skirt of foliage hiding the fork (no lollipop or umbrella crowns); summer, spring and
+  four autumn palettes (red, orange, yellow, mixed) in oak, tall and bush shapes. Oyamel firs are 38 tiers of
+  needle clumps around a dark core. Every sprite has a pre-blurred twin for depth of field and is tinted by the
+  time of day.
+- LANDSCAPES use atmospheric perspective: each layer is painted offscreen and hazed toward the horizon colour.
+  The meadow has a far range with a continuous woodland edge, mid hills with patchwork fields, groves, lone trees
+  and natural hedgerows (varying height, gaps), and a near flowery slope with big framing trees that sway.
+  Clouds are soft shaded sprites, tinted gold-over-rose at dawn and dusk and slate at night. A lens flare
+  (ghosts strung through the frame centre) follows the sun in every sunny shot.
+
+CHARACTERS (all rigged in code)
+- MONARCH BUTTERFLY: anatomically patterned wings — orange cells divided by black veins, black margins with two
+  rows of white dots, a black forewing tip with orange sub-apical spots, dark scales near the body; the underside is
+  paler buff-orange with white-edged veins. Black body with white dots, compound eyes, clubbed antennae, legs and a
+  coiled proboscis. Each wing is drawn flat and projected through a 3D pose (heading, roll, pitch, flap angle), so
+  flapping, banking and turning foreshorten the real pattern and the correct side (top or underside) shows. Males
+  have thinner veins and a black scent spot on each hind wing. Extra states: crumpled wings that expand, a swollen
+  abdomen that shrinks, an abdomen that curls to lay eggs, the proboscis uncoiling into a flower, worn wing edges
+  on an old traveller, backlit "stained-glass" glow.
+- CATERPILLAR: 13 rings plus head laid along any path (leaf edge, eggshell, twig underside, J-curve); bold yellow,
+  black and white bands, black-and-yellow striped head with chewing mandibles, two pairs of black filaments that
+  sway (long at the front, short at the back), true legs and prolegs; a peristaltic wave runs from tail to head
+  when it crawls. First instar pale grey-green with a large black head; stripes and filaments grow with each instar.
+- EGG: cream, upright, ribbed, about 1.2 mm tall; the black head darkens the tip before hatching.
+- CHRYSALIS: jade green lantern shape on a black cremaster hooked into a white silk pad, a black line set with
+  gold dots around its top third, gold spots lower down, glossy highlights; it can be elongated (fresh pupa),
+  wriggle, turn clear to show the folded orange wing, crack, and remain as an empty split shell.
+- BLUE JAY: crest, black necklace, flapping wings, opening beak, gagging head-shake.
+- PLANTS: common milkweed (broad leaves with veins that can be eaten away bite by bite, pink flower umbels, pods
+  that split and release silky seeds), coneflowers, goldenrod, blazing star / bluebonnets, daisies, grass.
+- PLACES: a parallax dawn meadow; macro leaf surfaces with twinkling dew; a twig at golden hour and under the
+  moon; the migration seen from high above as a ground plane in true perspective (staggered patchwork plots with
+  furrows, red-barn farmsteads with silos, a country road, a winding river glinting in the sun, hundreds of
+  fall-coloured trees in woods and hedgerows, drifting cloud shadows, haze to the horizon); misty Mexican
+  mountains whose ridges are clothed in fir sprites, with three ranks of big oyamel firs in front that fill with
+  hanging bunches of roosting monarchs (and orange basking wings once the sun hits); a close-up of three sagging
+  fir branches at three depths draped with hundreds of real rig butterflies, a few live ones shivering their
+  wings to warm up and then opening them; a stylised map of North America (coasts, Great Lakes, mountain ranges,
+  CANADA / UNITED STATES / MEXICO).
+- LIFE EVERYWHERE: a fuzzy bumblebee works the flowers (egg-laying and nectar scenes); small birds cross the
+  summer sky and a V of geese flies south over the autumn meadow; leaf crumbs tumble from the caterpillar's
+  mandibles while it eats; every butterfly's antennae sway and twitch; flying butterflies bob with each
+  downstroke.
+
+MOTION DESIGN
+- The camera never stands still: keyframed moves with hand-held drift, parallax layers and impact shakes.
+- A macro-to-wide pull-back from a backlit wing; zoom-throughs between scales; whip pans; iris wipes into and out
+  of the x-ray world; springy pop-ins with overshoot; burst rings and flashes on key moments; sparkle trails behind
+  flying butterflies; time-lapse skies with racing clocks.
+- Events land on the beat of the music.
+- Five motion-design wipes, each revealing the next shot behind a moving tilted seam: a giant out-of-focus monarch
+  sweeping past the lens (title -> egg, first flight -> summer), a living curtain of monarchs with huge soft ones
+  near the lens (-> four generations, -> the migration), and a bank of cloud (-> the mountains of Mexico).
+
+STORY / SHOT LIST
+0–10 s    TITLE. Out of black, a backlit wing glows like stained glass; the camera pulls back to a monarch basking
+          with breathing wings on a pink milkweed flower at dawn (rays, mist, bokeh). She flutters, lifts off and
+          loops around the title "MONARCH" / "the life cycle of a butterfly", trailing sparkles, then dives into
+          the meadow.
+10–20 s   1 THE EGG. She lands on a milkweed leaf, tastes it with her feet (ripple rings), curls her abdomen over
+          the edge and lays one egg (glint). She leaves; the camera swings under the leaf to the egg: a macro of the
+          ribbed egg with a "1 mm" scale bar, a DAY 1 -> 4 badge, an x-ray lens on the curled larva forming inside,
+          the tip darkening, a tremble, chewing.
+20–25 s   2 THE CATERPILLAR. The pale first instar chews out of the top, climbs down the shell, turns round and eats
+          its eggshell; top view: it walks a ring, cutting the leaf's latex veins (white latex beads), then eats the
+          disc inside.
+25–37.5 s FIVE STAGES in time-lapse on a milkweed leaf: munching the edge away, frass dropping on the beat; at
+          every downbeat it freezes, molts (old skin and head capsule left behind) and springs out bigger and more
+          boldly striped; STAGE 1 -> 5 badge, a "1 cm" ruler that shrinks as the camera pulls out, "×2,000 heavier
+          in two weeks".
+37.5–42.5 THE JAY. A shadow sweeps over; a blue jay grabs the caterpillar; an x-ray iris shows the milkweed poison
+          glowing purple inside it; the jay gags, spits it out and flies off shaking its head; warning-colour rings
+          pulse round the unharmed caterpillar, which goes back to eating.
+42.5–50 s 3 THE CHRYSALIS. Golden hour: the fat caterpillar wanders along the underside of a twig, spins a silk
+          pad (glinting thread), grips it, drops and curls into a J; night falls with stars, the moon and a clock
+          racing through the hours.
+50–57.5 s Under the moon the skin splits behind the head, is wriggled up in steps and spun off; the soft green pupa
+          shortens into a jade chrysalis while gold dots sparkle into being.
+57.5–67.5 4 METAMORPHOSIS. Iris into an indigo x-ray world: the old body melts into a swirl of light; imaginal
+          discs glow and bloom into wing, eye, antennae, legs and proboscis while a DAY 1 -> 10 badge counts; the
+          wing outline draws itself with its veins, then floods orange. Back in colour the chrysalis has turned
+          clear, showing the folded wing.
+67.5–77.5 5 THE BUTTERFLY. Dawn: the case cracks; she slides out, grips the empty shell and hangs with a fat
+          abdomen and tiny crumpled wings; fluid pulses into the veins and the wings expand while the abdomen
+          shrinks; a lens shows the two halves of the proboscis zipping together; a clock counts 2 hours of drying
+          while she opens and closes her wings.
+77.5–82.5 FIRST FLIGHT across a wide morning sky, other monarchs in the distance.
+82.5–92.5 SUMMER. She sips nectar with the uncoiled proboscis; female and male side by side (♀ ♂, rings on the
+          male's two scent spots); a courtship spiral; a mated pair; four beat-cuts of eggs laid one per leaf with a
+          counter racing to 500.
+92.5–100  6 FOUR GENERATIONS on the map with a season wheel (March -> September): generations 1, 2 and 3 move
+          north from Texas to the Great Lakes and Canada (spinning life-cycle icons); the golden 4th generation is
+          born in late summer; bars compare "weeks" with "months".
+100–112.5 7 THE GREAT MIGRATION. Autumn meadow: pods split and seeds drift away; the long-lived monarch rises and
+          others join; high above fall colours a river of monarchs streams south, some circling up a thermal; a sun
+          compass shows the heading; on the map the routes converge through Texas on the mountains of central
+          Mexico (pin), a western route reaches coastal California, and a counter runs 0 -> 4,800 km.
+112.5–122.5 8 WINTER IN MEXICO. Misty blue mountains of oyamel firs fill with streams of monarchs; close-up of
+          branches hung with clustered butterflies, light snow, a counter rolling up to "millions"; sunlight breaks
+          through, wings open, and at the downbeat the whole forest bursts into the air in an orange blizzard.
+122.5–127.5 9 THE JOURNEY HOME. Spring map: they fly north into Texas; a worn old female lays one egg on a fresh
+          milkweed sprout among bluebonnets, then flies off into the light and fades; the egg glows.
+127.5–137.5 FINALE. A gold ring draws itself; four stations pop on (egg, caterpillar, chrysalis, butterfly) with
+          chevrons, a running spark and four tiny butterflies orbiting (four generations); "MONARCH" / "four
+          generations, one great journey"; the butterfly flies into the lens; end card "plant milkweed / every
+          monarch begins on one"; fade to black.
+
+FACTS SHOWN (as short chips and counters)
+- Eggs are laid only on milkweed, one per leaf, up to ~500 per female; an egg is smaller than a pinhead (~1.2 mm)
+  and hatches in about 3–5 days; the first meal is the eggshell.
+- The caterpillar eats only milkweed, grows through 5 stages with 4 molts, and becomes about 2,000× heavier in
+  roughly two weeks; milkweed toxins make it poisonous to birds, and its bright bands are a warning.
+- It spins a silk pad, hangs in a "J" for about a day, then sheds its skin into a chrysalis for about 10 days, where
+  the body is rebuilt from clusters of cells (imaginal discs).
+- The new butterfly pumps fluid into its wings, zips its two proboscis halves together and dries for ~2 hours.
+- Adults sip nectar; males have two black scent spots; summer generations live 2–6 weeks; the 4th generation lives
+  up to 8 months, flies up to 4,800 km to central Mexico steering by the sun, and millions cluster on fir trees for
+  the winter; in spring they fly north, lay eggs and die, and their descendants continue the cycle.
+
+MUSIC (original, synthesized, 96 BPM, D major; one "monarch theme")
+- Dawn and title: Dmaj9 pad swell, celesta, harp arpeggios, then the theme on strings and glockenspiel with
+  choir, brass and timpani as the title lands.
+- Egg: a music-box lullaby over pizzicato, celesta sixteenths, a bell and tick for each day, a tremolo for the
+  tremble.
+- Caterpillar: a bouncy band — marimba ostinato, upright-bass boom-chick, shaker and claps, the theme as a cartoon
+  bassoon, xylophone doubling; every molt adds a layer (rubbery stretch, pop, cymbal, brass stab); munching on the
+  eighth notes; a counter of ticks for ×2,000; the music sucks away before the bird.
+- Jay: D-diminished tremolo, timpani roll, the grab hit, x-ray drone, a comic "wah-wah" and spit, then the band
+  bounces back.
+- Golden hour and J: nylon-guitar fingerpicking and strings; a glittering shimmer for the silk; a falling harp
+  glissando for the curl; a celesta lullaby and accelerating clock at nightfall.
+- Chrysalis: mysterious Em9 / Cmaj7 harp and pads, rubbery wriggles, timpani on the twist, a choir as it takes shape,
+  bells for each gold dot.
+- Metamorphosis: a pulsing synth arpeggio and heartbeat that grow brighter over ten days, fizzing sparkles, five
+  bells for the discs, a choir-and-brass swell when the wing floods with colour.
+- Emergence: A-pedal tremolo, a crack and timpani, then the theme in slow motion on strings while the wings pump
+  up, a zipper for the proboscis, a flute while it dries.
+- First flight: the theme on full orchestra — strings in two octaves, brass, choir, timpani, toms.
+- Summer: guitar, flute (the theme), shaker; harp spirals for the courtship; bells for the eggs.
+- Generations: pizzicato clockwork, a rising bell per generation, choir and sparkles for the golden 4th.
+- Migration: autumn guitar and drifting celesta, then a driving B-minor string ostinato with toms, brass and the
+  theme in minor; ticking distance counter; arrival hit.
+- Mexico: choir, marimba tremolo and nylon guitar over wind in the firs; a hush of bells; a harp glissando and timpani
+  roll as the sun breaks through; on the downbeat the whole orchestra plays the theme while a roar of wings rises.
+- Journey home: flute and guitar; a bell for the last egg; a choir as she fades into the light.
+- Finale: the theme once more on strings and glockenspiel, a bell for each station, a choir on the title, a riser
+  as the butterfly flies into the lens, a final D add9 chord with timpani and bells, a four-note celesta coda.
+- Layered over all of this, scene by scene: a PIANO (stretched inharmonic partials on two detuned strings, felt
+  hammer) greets the dawn, warms the egg, doubles the nightfall lullaby, pulses under the strings as the wings
+  pump up, ticks like clockwork through the generations, plays a few hushed notes in the roost and accompanies
+  the journey home; TAIKO drums and dark FRENCH HORNS for danger (the jay), for the first flight, driving the
+  migration south and for the burst and the final chord.
+
+SOUND DESIGN
+- Real recordings (CC0, Joseph Sardin, BigSoundBank): dawn birdsong, countryside, forest birds, wind in tall grass,
+  wind in the trees (Mexico), a night meadow with crickets, two Eurasian jay calls for the bird.
+- Synthesized: wing flutters, a roar of thousands of wings, leaf munching, shell and chrysalis cracks, skin rustles,
+  rubbery wriggles, a zipper, latex drips, thuds and boings, silk shimmer, heartbeat, scanner sweeps, clock ticks,
+  pops, sparkles, whooshes, risers, reverse cymbals and impacts; a bumblebee buzz panned with the bee; distant
+  goose honks moving across the stereo field with the V; two deep wing beats and a rush of air for each giant-wing
+  wipe, a roar of wings for the swarm wipes and a wind gust with a soft choir for the cloud wipe.
+
+HOW TO REBUILD
+- Download the CC0 sounds:   zsh tools/fetch_sfx.sh
+- Music + sound effects:      node js/music.js build/score.wav [--levels]
+- Full film:                  node tools/render.js --video --jobs 14 --music   -> monarch-life-cycle.mp4
+- Contact sheet of moments:   node tools/render.js --times 2,20,45 --out /tmp/sheet.png
+- Rig test sheets:            node tools/test.js fly|big|larva|pupa|plants|map|world|trees|cluster
+
+
+====================================================================================================================
+PART 2 — HOW IT WAS PROMPTED
+====================================================================================================================
+
+1. "Do you know what is Monarch butterfly?"
+   -> A short explanation: Danaus plexippus; milkweed specialist (toxic, warning colours); egg -> caterpillar ->
+      chrysalis -> adult; the multigenerational migration to Mexico and California; male scent spots;
+      conservation.
+
+2. "Do you know the life cycle of monarch butterfly? Make a video, maybe two minutes, covering the whole end-to-end
+   life cycle with every important detail. It should be a motion animated video with very good animation and
+   storytelling, a very good background, and background music that changes with the situation. Take reference from
+   the chicken video and the amoeba motion video, and make the animation, motion and music better than those two —
+   colourful, with music based on the situation. Go all in."
+   -> This film (v1).
+
+3. "The animation is good but I want it to be better in detail, with very very good animation; also the trees are
+   not looking good. Go all in and make it very nice: very good animation, motion design and music, based on the
+   situation."
+   -> v2: painted tree sprites everywhere (fuller lit crowns, woodland edges, groves, hedgerows, autumn colours,
+      oyamel firs, the roost close-up), a perspective aerial autumn countryside, layered atmospheric haze, sprite
+      clouds tinted by the hour, lens flares, motion-design wipes, a bee, birds and geese, dew, crumbs, living
+      antennae and flight bob; the score gained piano, horns and taiko, a bee buzz, goose honks and wipe sounds.

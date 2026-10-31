@@ -1,0 +1,79 @@
+PROMPT — "NINE TO SIX: one man, one ordinary day"
+(animated short, 3 min 7.5 s, 1080x1080, 24 fps, original synthesized score)
+
+This file holds (1) the full production prompt that describes the finished video, so it can be recreated, and
+(2) the sequence of requests that were used to arrive at it.
+
+====================================================================================================
+PART 1 — THE PROMPT
+====================================================================================================
+
+Make a hand-drawn animated film, drawn frame by frame in JavaScript, about one ordinary day of a single young man who
+works for his dream but never gets time for his own things. He wakes up thinking about the office, has nothing to
+eat, grabs breakfast on the move, squeezes into a crowded metro and stands the whole way, works until lunch, eats in
+twenty minutes, works until six, rides the same crowded train back, has one beer at a bar, eats something and goes
+home, where he has five minutes for his own dream. Include the metro, buildings, a computer, a phone and the beer.
+Paint it like the reference video gVuAJ_uw1CUtQX3t.mp4 (style only; not included), where every frame looks freshly
+painted, with music that follows each situation. All movement must look natural: walking, sitting on the chair,
+typing with hands on the keyboard, eating, riding the train. Give him an innocent, ordinary face.
+
+FORMAT
+- 1080 x 1080, 24 fps, 187.5 s = 75 bars at 96 BPM (one bar = 2.5 s).
+
+LOOK
+- Hand-drawn pencil line with painted washes on cream paper; the palette turns to deep indigo in the evening;
+  torn-paper style wipes between scenes; short handwritten captions.
+
+STORY (captions from js/film.js)
+1. Title card: "Nine to Six".
+2. The flat in the morning — "Nothing to eat."
+3. The street — "Breakfast, on the move."
+4. The metro platform, then a packed carriage — "Standing. The whole way."
+5. Across the viaduct to the office tower; the desk and the work.
+6. "Twenty minutes for lunch."
+7. The afternoon — "Same tasks. More tasks."
+8. The evening train — "Same train. Even more crowded."
+9. The bar — "One beer. For himself."
+10. The night street home; the flat — "Five minutes a night, for his own dream." End card: "Someday."
+
+MUSIC
+- An original 96 BPM, 4/4 score synthesized sample by sample in js/music.js (plucks, marimba, electric piano, bass,
+  reed, pad, brass and light drums), one section per part of the day. The little sounds of the day — alarm, phone,
+  train, keys, glass, pencil — are part of the music.
+
+HOW TO REBUILD
+- Live player: open index.html.
+- Video: node nine-to-six/tools/render.js --video [--from S --to S]   -> nine-to-six.mp4 + original-score.wav
+- Checks: --at 12.5 | --times 5,20,50 | --sheet 0,187.5,1.1 --cols 15 --cell 64
+  (Node.js + @napi-rs/canvas + FFmpeg)
+
+====================================================================================================
+PART 2 — HOW IT WAS PROMPTED (the requests, in order)
+====================================================================================================
+
+1. "I want to create a video to show how a man's life works. When he wakes up, he thinks about the office and then
+   eats some food. When he doesn't have food, he eats something on the way to the office. Then he books a cab or
+   takes public transport, in the rush, so he doesn't even get the chance to sit. He reaches the office after one
+   hour, works until lunch, goes for lunch, works again until six, then comes back on the same train, the same
+   metro, in the rush. Then he goes to a bar to drink some beer, eats something and goes back home. You can take
+   the animation from the previous video, but I want the animation to be very, very good. It should have all the
+   things like the metro train, buildings, computer, mobile phone, drinking beer and all. He is single, working for
+   his dream, struggling, and doesn't get any time to do his own things. Even if it's long — more than 2–3 minutes
+   — that's fine. You can decide."
+   -> First version of the film.
+
+2. "The walk is not looking good, improve it. While working, his hands are not typing, and in the train it's not
+   looking natural. Make all the activities in the video natural."
+
+3. "The cab looks like a toy, and when people sit in the train it looks like they vanish. The office gate is not
+   good, eating is not natural, inside the metro it looks like a room, the beer glass is too big, and he walks like
+   he has some disease. Make it natural again."
+
+4. "Check gVuAJ_uw1CUtQX3t.mp4 and see how the texture and animation are done: it has a painting effect, where every
+   frame looks like it's getting painted, and very good music based on the screen and the situation. Do something
+   like that. Also the person's face doesn't look good — make it look innocent, like a normal face."
+   -> The painted look and situation-based score described in Part 1.
+
+5. "His sitting position is not good — he is sitting below the chair, not on it. Also, while typing, his hands are
+   below the keyboard."
+   -> Seat and hand positions fixed: the final film.
