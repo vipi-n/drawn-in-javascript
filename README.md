@@ -1,155 +1,107 @@
 # Drawn in JavaScript
 
-Animated films drawn with JavaScript on an HTML canvas. Soundtracks are synthesized in code, and the Falcon 9 film adds spoken narration.
+Short animated films where **every frame is drawn in code**. There's no video editor, no stock footage and no animation software: each scene is a JavaScript function that paints a canvas for a moment in time. Most soundtracks are composed in code too, from synthesized voices or free orchestra samples, and locked to the picture beat by beat.
 
-## Falcon 9: how a reusable rocket works
+The films were made with AI coding agents in Cursor. The human evolution, dinosaur and video game history films were made with **Claude Opus 5.5**. Every folder has a `prompt.txt` with the prompt that describes its film, so anyone can recreate it.
 
-[Open the JavaScript player](falcon9/index.html). The 4 minute 20 second deep dive explains the Falcon 9 booster’s ascent, stage separation, return trajectories, reentry, grid fins, landing burn, guidance, recovery, and reuse. See [the project notes](falcon9/README.md) for the build steps and technical sources.
+## The films
 
-The human and dinosaur films were made with **Claude Opus 5.5** in Cursor, from the prompts below.
+### History
 
-**▶ Watch live:** [human evolution (56 s)](https://vipi-n.github.io/drawn-in-javascript/human/) · [dinosaurs to birds (47.5 s)](https://vipi-n.github.io/drawn-in-javascript/dinosaur/)
+| Film | Folder | Length | Format | Story |
+|---|---|---|---|---|
+| **Still Curious**: human evolution | `human/` | 56 s | 1080², 24 fps | An ape walks through 7 million years and becomes a toddler taking first steps. Crayon style, plays in the browser |
+| **Still Here**: dinosaurs to birds | `dinosaur/` | 47.5 s | 1080², 24 fps | A tiny dinosaur survives the asteroid, and its descendant is the robin in your garden. Plays in the browser |
+| **Video Games**: a history, 1958 to today | `video-game-history/` | 2:08 | 1080², 60 fps | From oscilloscope tennis to esports, each era in its own pixel style, with an orchestra + 8-bit score |
+| **ISRO**: from a bicycle in Thumba to the Moon | `isro/` | 3:20 | 1920×1080, 60 fps | A cinematic documentary-style trailer of India's space programme, with a fully synthesized orchestral score |
 
-| Film | Folder | Length | Story |
-|---|---|---|---|
-| **Still Curious**: the history of human evolution | [`human/`](human/) | 56 s | 7 million years ago → today |
-| **Still Here**: from dinosaurs to birds | [`dinosaur/`](dinosaur/) | 47.5 s | Triassic → asteroid → the robin in your garden |
-| **From Beads to Bits**: the evolution of computers | [`computer/`](computer/) | 66 s | abacus → punched cards → computers → cloud and AI |
-| **Gone Fishing**: a day by the river and in the jungle | [`fishing/`](fishing/) | 120 s | morning walk → fishing and a big catch → jungle camp lunch → sunset dessert → sleeping under the stars |
+### Nature: life cycles
 
-## From Beads to Bits: the evolution of computers
+| Film | Folder | Length | Format | Story |
+|---|---|---|---|---|
+| **Amoeba**: the life of a single cell | `amoeba/`, `amoeba-motion/` | ~65 s | 1080², 24 fps | Line-art diagrams drawn live by a glowing pen. The `-motion` folder is a second version with more camera movement |
+| **Frog**: the life cycle of the common frog | `frog/`, `frog-motion/` | 2:14 | 1080², 60 fps | Spawn, embryo, tadpole, metamorphosis, hibernation, spring. `frog-motion` is v2 with a constantly moving camera and a real orchestra |
+| **Cicada**: the 17-year life cycle | `cicada-motion/` | 2:15 | 1080², 60 fps | Seventeen years underground, one summer in the sun, with real cicada recordings |
+| **Ant**: the life of a colony | `ant-motion/` | 1:31 | 1080×1920, 30 fps | The nuptial flight, a queen founding a nest, egg to adult, the colony as a city. Vertical, made for Reels |
+| **Monarch**: the life cycle of a butterfly | `monarch/` | 2:17 | 1080², 30 fps | Egg, caterpillar, chrysalis, butterfly, and the great migration to Mexico |
 
-Open the [JavaScript player](computer/index.html).
+### Stories, music and paintings
 
-Inspired by the crayon animation in `gVuAJ_uw1CUtQX3t.mp4`, the film uses warm paper, uneven ink outlines, textured color, handwritten dates, and a small abacus bead that comes alive. The camera follows that bead along a winding path, changing height and scale as it explores the abacus, Jacquard punched cards, Babbage's Analytical Engine design, an electronic computer, the transistor, integrated circuit, microprocessor, personal computer, World Wide Web, smartphone, and today's connected computers and AI. The final image shows a person at a laptop connected to servers and a clearly labelled AI chip. The score is an original 120 BPM electronic piece; its analog pulses gain drums and a brighter lead as the machines become digital.
+| Film | Folder | Length | Format | Story |
+|---|---|---|---|---|
+| **The Tortoise and the Hare** | `tortoise/` | 60 s | 1080², 24 fps | The fable retold as a cut-paper animation. Plays in the browser |
+| **Nine to Six**: one ordinary day | `nine-to-six/` | 3:08 | 1080², 24 fps | A young man's day of metro, office and one beer, with five minutes left for his own dream. Painted style, plays in the browser |
+| **You're Absolutely Right** | `absolutely-right/` | 3:23 | portrait, landscape and motion cuts | A funny lyric music video about an engineer and an AI coding agent, every word timed to the song |
+| **Red Sprites over the Village** | `red-sprite/` | 9 s + still | 1080×1350, 30 fps | A living painting of red lightning above a sleeping village, interactive in the browser |
 
-All graphics are drawn in [`computer/js/film.js`](computer/js/film.js) and [`computer/js/world.js`](computer/js/world.js) with the crayon toolkit in [`computer/js/ink.js`](computer/js/ink.js). The score is synthesized in [`computer/js/music.js`](computer/js/music.js), and [`computer/tools/render.js`](computer/tools/render.js) produces the video and WAV offline with a local Canvas implementation and FFmpeg.
+### Experiments (Python, not JavaScript)
 
----
+| Project | Folder | What it is |
+|---|---|---|
+| **Anime Clip** | `anime-clip/` | A 14-second live-action clip redrawn as anime with AI models (AnimeGAN, Stable Diffusion + ControlNet), each character in a different show's style |
+| **Chicken 3D** | `chicken-3d/` | A Blender look-development test of realistic 3D chickens and fluffy chicks, rendered as stills |
 
-## Still Curious: human evolution in under a minute
+## How the films are made
 
-### Prompt
+There are two kinds of project in this repo.
 
-> The history of human evolution in under one minute. Draw every frame of this animation in JavaScript. Here is the video reference, I pasted the video in the current app folder. I want the visuals and animation like this. Also add music to this animation.
+**Browser films** (`human`, `dinosaur`, `tortoise`, `nine-to-six`, `red-sprite`) run straight from an `index.html` file:
+- The film draws live on an HTML canvas, and the music is generated in the browser.
+- A player has play/pause, a slider to jump anywhere, loop and sound buttons, and a **save video** button that records the film.
 
-A follow-up prompt:
+**Rendered films** (the life cycles, `video-game-history`, `isro`, `absolutely-right`) are rendered offline to an MP4:
+- Node.js draws each frame with `@napi-rs/canvas`, the same canvas drawing API browsers use.
+- The frames are piped into FFmpeg, which encodes the video and adds the soundtrack.
+- The film is split into chunks that render in parallel, so a 2-minute film at 60 fps takes a few minutes.
 
-> Make the same kind of video for human evolution. I gave the reference so you can see all things like design, animation etc. Make it for humans, and don't change the dinosaur one, keep it as well.
+Ideas shared across the films:
+- **Every scene is a function of time.** A scene can draw any moment `t` on its own, so any frame can be rendered instantly and in any order.
+- **One clock for picture and sound.** Each rendered film has a `js/cues.js` cue sheet (tempo, scene starts, story events) that both the picture and the music read. A splash on screen and its sound land on the same frame.
+- **Music made in code.** Some scores are pure synthesis. Others play real instrument samples from the free VSCO-2 Community Edition orchestra and real nature recordings from BigSoundBank (both CC0). The scores are mixed with reverb and normalised to streaming loudness (-15 LUFS).
 
-*(The reference video was a hand-drawn, crayon-style animation. It was used only for visual style and is not included in this repo.)*
+## Folder layout
 
-### The story
+Most projects look like this:
 
-1. **7 million years ago:** an ape swings through the jungle, falls off a branch, sees stars, and then stands up on two legs for the first time.
-2. **2.6 million years ago:** it knocks two stones together and makes the first hand axe. A spark flies off...
-3. **1 million years ago:** ...and becomes a campfire. A sabre-tooth cat creeps out of the dark, and a burning torch drives it away.
-4. **300,000 to 70,000 years ago:** the ice age. The walk goes past mammoths and through a blizzard, and the people huddle around a tiny fire until the sun returns.
-5. **40,000 years ago:** cave art. A hand stencil, a painted mammoth, a painted sun.
-6. **12,000 years ago to 57 years ago:** one continuous walk through time:
-   - farming, with a dog joining in;
-   - pushing a cart past the pyramids;
-   - waving at a sailing ship;
-   - a city street, then a rocket.
+```
+project/
+  prompt.txt       the prompt that describes the film, so it can be recreated
+  index.html       the browser player (browser films only)
+  js/              the drawing code: scenes, characters, effects
+  js/music/        the score and sound design (rendered films)
+  tools/render.js  renders stills, contact sheets, previews and the final video
+  tools/*.sh       download scripts for the free sound recordings (where used)
+```
 
-   The walker changes clothes each time he passes behind a bush, an obelisk or a phone box.
-7. **The Moon:** one small step.
-8. **Today:** a toddler's first wobbly steps under the same tree the ape hung from. A butterfly lands on the child's hand: *still curious.* The film then loops back to the start.
+## Run them
 
----
+**Browser films:** download the repo (**Code** → **Download ZIP**), unzip it, and double-click a film's `index.html`, for example `human/index.html`. Chrome is recommended. Nothing needs installing.
 
-## Still Here: dinosaurs to birds in under a minute
+**Rendered films:** you need macOS (several films use the system fonts), Node.js 20 or newer, and FFmpeg.
 
-### Prompt
-
-> The history of evolution in under one minute. Draw every frame of this animation in JavaScript. Here is the video reference. I want the visuals and animation like this. Also add music to this animation.
-
-### The story
-
-1. A tiny dinosaur hatches in the Triassic and runs through the Jurassic, between giant legs.
-2. It meets a T-rex, then escapes.
-3. There's a sunset, and then the asteroid hits.
-4. Dust and darkness follow.
-5. Life returns, and the little dinosaur's descendant is a robin.
-6. The robin's nest holds an egg, and the film loops back to the hatching.
-
----
-
-## Run it locally
-
-You don't need to install anything and you don't need a server.
-
-1. Download or clone this repo:
-   - With git: `git clone https://github.com/vipi-n/drawn-in-javascript.git`
-   - Without git: on the repo page, click **Code** → **Download ZIP**, then unzip it.
-2. Open a film in a browser (Chrome is recommended):
-   - Human evolution: double-click `human/index.html`.
-   - Dinosaurs: double-click `dinosaur/index.html`.
-   - Computers: double-click `computer/index.html`.
-
-   Or from a terminal:
+1. In the project folder, run `npm install @napi-rs/canvas`.
+2. In `js/core.js`, point the canvas import at it: `const C = require('@napi-rs/canvas');`
+3. For films with a sampled score, download the free VSCO-2 Community Edition samples into `assets/vsco/`. Run the project's `tools/fetch_sfx.sh` to download its sound recordings.
+4. Render:
    ```bash
-   open human/index.html        # macOS
-   xdg-open human/index.html    # Linux
-   start human\index.html       # Windows
+   node tools/render.js --at 10          # one still frame at 10 s
+   node js/music/index.js                # the score -> build/score.wav
+   node tools/render.js --video          # the full film
    ```
-3. Wait for the music to finish generating, then click **play**.
 
-An internet connection is only used to load the handwriting font (Patrick Hand from Google Fonts). Offline, the captions fall back to a normal font and everything else still works.
+The Python experiments list their own steps in their `prompt.txt`.
 
-**Optional: a local server.** Opening the file directly works fine. If your browser blocks anything, run a tiny server from the repo folder and open the URL it prints:
-```bash
-python3 -m http.server 8000
-# then visit http://localhost:8000/human/  or  http://localhost:8000/dinosaur/
-```
+## What's not in this repo
 
-### Controls
+To keep the repo small, these are left out. All of them can be rebuilt or downloaded again:
+- the finished videos and rendered frames;
+- the sample libraries and sound recordings;
+- the reference videos some films took their visual style from. They were used only for style and belong to their creators.
 
-| Control | What it does |
-|---|---|
-| **play / pause** | start or stop the film |
-| **slider** | jump to any moment |
-| **loop** | repeat the film forever |
-| **sound** | music on or off |
-| **save video** | records the film in real time and downloads it as an `.mp4` or `.webm` |
+## Credits
 
-**URL options:**
-- `index.html?t=36` opens the film paused at 36 seconds.
-- `index.html?sheet=0,15,0.5&cols=6` shows a contact sheet of frames from 0 to 15 seconds, every 0.5 seconds.
-
----
-
-## How it works
-
-- **Canvas:** 1080×1080 at 24 fps. Each scene is a pure function of time, `scene(t)`, so any frame can be drawn instantly and the slider is exact.
-- **Hand-drawn look:**
-  - Every line wobbles a little, and the wobble changes every 2 frames. This is the "line boil" of traditional animation.
-  - Colour is laid down as rough hatching with a paper-grain texture, like crayon.
-- **Characters:** rubber-hose limbs with simple inverse kinematics. The human film uses one rig with an `evo` value from 0 (ape) to 1 (modern human), so the character gradually stands taller, loses fur and changes posture.
-- **Transitions:** the camera zooms into objects to move between scenes: a spark becomes a campfire, the cave mouth goes dark, a painted sun becomes the real sun.
-- **Music:** built sample by sample in `music.js`:
-  - Marimba, glockenspiel, plucked strings, piano, pads, bass and drums, with a small reverb.
-  - Sound effects (roar, fire crackle, stone clacks, dog bark, rocket rumble, and more) timed to the action.
-  - The end of the track wraps into the start, so the loop is seamless.
-
-### Files
-
-```
-human/
-  index.html      player page
-  js/ink.js       canvas setup, wobbly ink lines, crayon hatching, text
-  js/kit.js       shared props (sun, clouds, plants, mammoth...)
-  js/people.js    the hominin rig (ape → human), kid, sabre-tooth, dog, butterfly
-  js/world.js     trees, fire, snow, cave art, pyramids, ship, city, rocket, moon
-  js/scenes.js    the timeline: every scene and caption
-  js/music.js     the score and sound effects
-  js/main.js      playback, controls, audio, video export
-
-dinosaur/
-  index.html
-  js/ink.js  js/characters.js  js/scenes.js  js/music.js  js/main.js
-```
-
----
-
-The human and dinosaur films were made with Claude Opus 5.5 in Cursor.
+- Orchestral samples: VSCO-2 Community Edition by Versilian Studios (CC0).
+- Nature recordings: BigSoundBank by Joseph Sardin (CC0).
+- 3D assets in `chicken-3d`: Poly Haven and OpenGameArt (CC0). Licences are included in the folder.
+- *Korobeiniki* (in the video game film) is a traditional Russian folk song from 1861, in the public domain.
+- Game, show and brand names mentioned in the films belong to their owners. These are non-commercial, fan-made tributes.
