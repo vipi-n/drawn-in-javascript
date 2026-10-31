@@ -1,0 +1,13 @@
+CICADA — the life cycle (17-year periodical cicada, Magicicada septendecim)
+1080 x 1080 square, 60 fps, 135 s (54 bars at 96 BPM), stereo 48 kHz AAC — same format as ../frog-motion.
+
+Picture: drawn entirely in code (Node + @napi-rs/canvas). js/cues.js is the shared clock for picture and music.
+  s1 prologue (dusk forest chorus, CICADA title) + song (male calls, female answers, egg-laying with a lens into the twig)
+  s2 eggs (six-week time-lapse, eye spots, hatching) + drop (fall from the canopy, landing, ant, digging in)
+  s3 underground (17-year dial, five instars, four moults, sap, seasons passing above, a hidden brood) + awakening (18 °C, mud turrets)
+  s4 emergence (dusk crowd, robin, climbing the trunk) + last moult (split, hang, wings inflate, sunrise hardens it)
+  s5 chorus (first flight, 100 dB) + return (death feeds the tree, a new nymph digs in) + epilogue (life-cycle ring)
+Music: js/music — original orchestral score on CC0 VSCO-2 CE samples (assets/vsco) + CC0 BigSoundBank recordings
+  (assets/sfx, fetched by tools/fetch_sfx.sh): real cicada calls/chorus, night insects, forest, birds, heartbeat.
+  Continuous across every cut; -15 LUFS integrated, true peak -1.6 dBTP. Check with node tools/music_check.js.
+Build: node js/music/index.js  ->  node tools/render.js --video   (tools/scan.js checks every frame for errors)

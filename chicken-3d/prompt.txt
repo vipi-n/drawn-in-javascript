@@ -1,0 +1,40 @@
+PROMPT — "CHICKEN 3D: Blender look-development test"
+(still renders, 1080x1080 — a test made for ../chicken, not a finished film)
+
+This file holds (1) the prompt that describes what was built, so it can be recreated, and
+(2) the requests that led to it.
+
+====================================================================================================
+PART 1 — THE PROMPT
+====================================================================================================
+
+Make a quick Blender look-development test to see whether the chicken film could use realistic 3D birds: a hen and
+a rooster from CC0 base models, procedurally modelled fluffy chicks, a nest with eggs and a farm yard, lit by a
+farm-field HDRI and rendered as stills with EEVEE or Cycles.
+
+SCENE
+- Lighting: Poly Haven HDRI (farm_field / kiara_1_dawn) plus a warm sun; PBR ground (Poly Haven soil and plank
+  textures) with displacement; Poly Haven grass and dandelion models scattered around.
+- Hen and rooster: CC0 OpenGameArt models by Cestmir Dammer (with idle and eating animations).
+- Chicks: metaball body and head -> voxel remesh -> subdivision, then a 3,500-strand particle down with a root-to-tip
+  colour gradient, clumping and curl; eyes, beak and legs placed by ray casting; seed-based colour variation (gold
+  to brown) and a "wet" parameter; subsurface scattering and sheen for the down.
+- Camera: 70–90 mm lens, f/2.8–4.5 depth of field, low angle; AgX tone mapping.
+
+HOW TO RUN (assets/ must hold the CC0 downloads; see assets/oga/*/license.txt)
+- blender -b -P tools/lookdev.py -- [eevee|cycles] /tmp/ck/lookdev.png
+- blender -b -P tools/look_chick.py -- [eevee|cycles] /tmp/ck/look_chick.png
+- blender -b -P tools/look_shots.py -- [yard|nest] /tmp/ck/shot.png [cycles|eevee]
+- tools/lib3d.py holds the shared scene, material and model helpers.
+
+====================================================================================================
+PART 2 — HOW IT WAS PROMPTED (the requests, in order, from the chicken film's chat)
+====================================================================================================
+
+1. "I don't want you to put a lot of text in the video. The animation should be pretty good; for each step show
+   animation. The chicks, hen and chicken are not looking realistic. Do you want to use Blender or something?"
+   -> This Blender test was made.
+
+2. "No, don't use this. Maybe try to modify the existing design only, which will not take much time. Also don't
+   delete these PNG files."
+   -> The 3D route was dropped and the 2D film in ../chicken was redrawn instead; the test stills were kept.
