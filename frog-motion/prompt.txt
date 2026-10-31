@@ -1,0 +1,138 @@
+PROMPT — "FROG: the life cycle of the common frog" (MOTION EDITION, v2)
+(animated short, 134.4 s, 1:1 square 1080x1080, 60 fps, stereo 48 kHz original orchestral score + sound design)
+
+This file holds (1) the full production prompt that describes the finished video, so it can be recreated, and
+(2) the sequence of requests that were used to arrive at it.  v2 = a copy of the first film (../frog, untouched)
+with a new sampled-orchestra score, motion-graphic accents and a layer of tiny living details in every shot.
+
+
+====================================================================================================================
+PART 1 — THE PROMPT
+====================================================================================================================
+
+Create a premium, top-tier motion-design nature film about the complete life cycle of the common frog
+(Rana temporaria), in real scientific detail: the spring call, amplexus and external fertilisation, frogspawn
+swelling and rising, the embryo from one cell through cleavage, gastrulation (yolk plug) and the neural tube to the
+heartbeat and hatching, the hatchling with external gills and a sticky gland, the operculum and the spiracle, the
+grazing tadpole with its horny beak and long coiled gut, a dragonfly-nymph ambush, hind legs, the metamorphosis
+(thyroid hormone, left arm out through the spiracle, tail absorbed as food, wide mouth, gills to lungs, short gut),
+the froglet leaving the water in the rain, its first tongue strike, growing up through summer and autumn,
+hibernation in pond-bottom mud under ice, and spring — the call again, new spawn, the cycle closing.
+Every step is SHOWN; text is short. Original music that follows each scene, plus real frog recordings.
+
+FORMAT
+- 1080 x 1080 square, 60 fps, 134.4 seconds = 56 bars at 100 BPM (one bar = 2.4 s), stereo 48 kHz.
+- Everything is drawn by JavaScript (Node.js + canvas); no photos, no footage, no image assets.
+- Watermark: X logo + "@vipinxtwt" bottom-left on every frame.
+
+LOOK
+- Luminous painterly naturalism: layered parallax depth, soft depth-of-field (blurred foreground weeds and reeds
+  sliding past the lens), god rays, live water caustics on the pond floor and under the surface, drifting motes and
+  bokeh, wave-broken mirror reflections, rain rings, frost, film grain and a gentle vignette.
+- A signature OVER-UNDER split view (half above, half below the wavy waterline with a bright meniscus) for the
+  amphibian's double life: the dawn call, the froglet climbing onto a lily pad, the finale panorama.
+- Characters are clean illustrated shapes with thin dark outlines, gradient form shading, wet specular glints and a
+  rim light: an olive-brown common frog with dark blotches, a dark "mask" over the eardrum, a golden eye with a
+  horizontal pupil, banded legs and long webbed feet.
+- ONE continuous amphibian rig morphs hatchling -> tadpole -> froglet -> adult (outlines resampled and blended), so
+  the metamorphosis is a true on-screen transformation: legs bud, the front legs bulge under the skin and pop out
+  (the LEFT one through the spiracle), the tail shrinks, the eyes rise and bulge, the mouth widens, the colours turn.
+- A "glass" mode shows the anatomy through the skin: long coiled larval gut, internal gills, lungs, heart, thyroid.
+- The embryo (Gosner stages 1-16) is shaded per pixel as a real sphere in darkfield microscope light: dark animal
+  pole / pale yolk, grey crescent, cleavage furrows (2, 4, 8, 16, 32, 64, 200 cells) cutting in from the animal pole,
+  epiboly with the blastopore lip closing around the yolk plug, the keyhole neural plate whose folds zip shut;
+  then the curled tailbud embryo with gill buds and a beating heart wriggles out of its capsule.
+
+TEXT DESIGN (lives at the waterline)
+- Title: "FROG" (Optima ExtraBlack) rises letter by letter out of the night pond, golden, dripping, with
+  wave-broken reflections; "THE LIFE CYCLE OF THE" above it; the letters sink back as the camera dives.
+- Stage headers: a gold italic numeral (Iowan Old Style) drops onto a thin wavy "surface" line with a ripple; the
+  stage name (Seravek, wide tracking) surfaces letter by letter through the line; a subline floats just beneath it.
+- Callouts: a ripple pin on the subject, a drawn leader that turns into an underline, the label fills from the bottom
+  like a glass of water, an optional gold italic subline.
+- Time badge: a bubble (DAY / WEEK / YEAR) — when time jumps it pops into droplets and a new one rises.
+
+STORY (bars at 100 BPM)
+- 0-12 s   Night pond: moon path, reeds, mist; a frog surfaces, eyes shining, calls twice; the title rises.
+- 12-18    Dive into dawn over-under: the male calls with his sac, distant males answer, a plump female swims in.
+- 18-24    Amplexus (callout: nuptial pads); she lays a stream of eggs, his milt shimmers: fertilised outside.
+- 24-33.6  Frogspawn swells in time-lapse, other clumps around, rises to the sunny surface; zoom into one egg.
+- 33.6-52.8 The embryo macro, day badge 1 -> 14; every cell division lands on a beat.
+- 52.8-62.4 Hatchlings hang on the spent jelly; external gills, sticky gland; operculum grows; spiracle; swims off.
+- 62.4-76.8 Tadpole school, grazing (beak + tiny teeth), glass gut, a gulp of air; the light turns murky, a
+            dragonfly nymph's mask shoots out and snatches a tadpole; alarm, scatter, calm.
+- 76.8-100.8 One long take: hind legs bud -> paddle -> toes -> kick; then a dark stage: thyroid glow, the left arm
+            bursts out of the spiracle, the tail feeds the body, mouth widens, gills -> lungs, gut shortens, colour
+            turns, and the froglet is revealed in god rays.
+- 100.8-110.4 Over-under summer: the froglet climbs onto a lily pad (tail stub), rain begins, dozens of froglets
+            emerge, first tongue strike.
+- 110.4-117.6 On the bank: tongue strike with the eyes pushing food down; summer -> autumn time-lapse, grows up,
+            leaps back into the pond.
+- 117.6-122.4 Under the ice: hibernating in mud and leaves, breathing through its skin, slow heartbeat.
+- 122.4-134.4 The ice cracks into spring; it swims up, calls; a female joins; new spawn glows below; the camera pulls
+            back to a panorama where a loop of light runs eggs -> tadpoles -> froglet -> frog; "FROG — the cycle
+            begins again" rises from the waterline; one last croak.
+
+MOTION
+- The camera never stops: spline keyframes with continuous velocity, hand-held drift, impact shakes, zoom kicks on
+  every cell division, slow orbits and pushes; parallax planes from sky to lens.
+- Transitions: dive / rise through the water surface (bubbles + meniscus), lens zoom-through into an egg, the macro
+  shrinking back into its egg (iris), a giant tadpole silhouette whipping across the lens, bubble curtains, a
+  frog-pupil iris wipe, ice cracking into a white flash.
+- Springs with overshoot on text, wriggles and kicks on beats, time-lapse light flicker.
+
+MUSIC + SOUND (all original; nothing reused from other films)
+- A real orchestra, not synths: CC0 VSCO-2 Community Edition samples (violin/viola/cello sections sustain, tremolo,
+  pizzicato and spiccato; solo contrabass; harp; flute, oboe, clarinet, bassoon; French horn open + muted; glockenspiel,
+  marimba, xylophone; timpani hits + rolls; suspended-cymbal swells, crash, gong, bass drum; congas, log drums, guiro,
+  shaker, triangle, bell tree), velocity layers + round robins, cubic re-pitching, looped sustains, humanised timing,
+  orchestral seating (pan + hall send per section), voice-led chords and diatonic harmony lines.
+- 100 BPM, F major (D minor for danger and the metamorphosis). Three themes: a hopping "frog theme" (C D F | A G F C |
+  D F Bb | A), its answer (C Bb A G | E F G | A G F) and a lyrical "life" theme, re-orchestrated per scene: harp
+  arpeggios + flute under the night stars, the orchestra answering each croak (bassoon hops, cello pizz), a timpani roll
+  and cymbal swell into a soft tutti for the title; the "pond band" (pizz bass walk, bassoon staccato hops, marimba
+  off-beat skank, log drums, congas, guiro "rib-bits", shaker) for the call, the tadpoles, the froglets and spring; a
+  cello love song over harp for amplexus; marimba + harp clockwork for the spawn; plucked harp/glock "cell pops" on every
+  division, a low clarinet for gastrulation, a rising violin line for the neural tube, timpani heartbeats; a flute /
+  clarinet duet for the hatchlings; low tremolo, creeping bassoon, muted horns and a timpani roll for the nymph, an
+  orchestral hit on the strike and scurrying xylophone; a slow horn theme over harp for the legs; spiccato strings,
+  drums and swelling horns (theme in D minor on oboe) for the metamorphosis into a tutti F-major reveal; pizzicato
+  raindrops; a pastoral flute, a wistful autumn oboe; glass tones and a slow heartbeat under the ice; singing ice into a
+  bright spring tutti, theme B in horns + violins for the panorama, a final F-major cadence, a last croak, a pizz button.
+- Real CC0 recordings (Joseph Sardin, BigSoundBank): single frog croaks, frog choruses, crickets, dawn birds, robin,
+  blackbird, countryside, a fly, a bumblebee, pond field ambience, rain + thunder, real splashes, water drops (title drips,
+  chapter numerals), bubble pops (clock); synth only for whooshes, tongue, gulp, nymph snap, ice, heartbeat thumps.
+- Mix: FFT convolution hall (synthetic stereo IR, frequency-dependent decay), slow loudness rider, glue compressor,
+  tilt EQ, -15 LUFS integrated (LRA ~6 LU), look-ahead limiter at -1.2 dBFS; ambience beds muffle underwater.
+
+TINY DETAILS + MOTION GRAPHICS (v2)
+- Living pond everywhere: water fleas (Daphnia) hopping with beating antennae and copepods darting on three depth
+  planes; oxygen beads on elodea leaf tips that swell, let go and rise; mosquito larvae hanging under the surface;
+  a pond snail gliding over the grazing stone; water striders rowing with leg dimples (and their light spots seen from
+  below); whirligig beetles spinning V-ripples; damselflies patrolling the reeds; gnats glittering in low sun; fireflies
+  (reflected) and bats crossing the moon at night; a cabbage-white butterfly, seed fluff, an orb web beaded with autumn
+  dew; raindrop crowns and rain beading on the lily pad.
+- Characters breathe: flanks swell every few seconds, the throat pumps, water beads slide down the back and drip off,
+  the eye catchlight twinkles as a turning four-point star, pupils dilate at night.
+- Motion graphics in the waterline language: sound-wave arcs from every call; magnifier lenses that pop on a spring,
+  tethered by tangent lines (nuptial pad x20, external gill filaments with streaming blood cells x40, tadpole mouthparts
+  with keratin jaws and labial tooth rows scraping x30); a turning microscope reticle, a 1 mm scale bar and an ECG trace
+  for the embryo heartbeat (and a slow one under the ice); dotted trajectories for tongue strikes and the leap; golden
+  hormone rings pulsing on the beat during the metamorphosis.
+- Camera + finishing: beat-synced zoom kicks in every groove section, chromatic-aberration pulses on cuts and impacts,
+  a light leak sweeping across every transition.
+
+
+====================================================================================================================
+PART 2 — THE REQUESTS
+====================================================================================================================
+
+1. "do u know lifecycle of Frog in detail?"
+2. "yes make a video of lifecycle of frog in detail and dont copy musci from them you need to make music based on
+   scene, and dont copy, it should be veru very good. the animation should be top notch, the motion animation should
+   be top tier, work like you're in top 1% of video editor and make the video very very very good. also dont copy
+   texts desing from older videos."
+3. "you need to ctreate new folder for this, dont change any code in existing folder"
+4. "these grassess are flikering"  (fixed in the first film)
+5. "misic is not looking good also animation can be inproved, i want animation like motion and with each very very
+   little details. dont modifyt existing video take cipy and modify that"  -> this folder (frog-motion), v2

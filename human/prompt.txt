@@ -1,0 +1,61 @@
+PROMPT — "STILL CURIOUS: the history of human evolution in under a minute"
+(animated short, 56 s, 1080x1080, 24 fps, browser player, seamless loop with synthesized music)
+
+This file holds (1) the full production prompt that describes the finished film, so it can be recreated, and
+(2) the requests that were used to arrive at it (also quoted in the repo README).
+
+====================================================================================================
+PART 1 — THE PROMPT
+====================================================================================================
+
+The history of human evolution in under one minute. Draw every frame in JavaScript on an HTML canvas in the same
+hand-drawn crayon style as the dinosaur film, and add music. One character evolves from an ape to a modern human as
+he walks through 7 million years.
+
+FORMAT
+- 1080 x 1080, 24 fps, 56 s; the end wraps into the start so the film loops forever.
+- Each scene is a pure function of time, scene(t), so any frame can be drawn instantly and the slider is exact.
+
+LOOK
+- Line boil every 2 frames, rough crayon hatching with paper grain on warm cream paper.
+- One rubber-hose rig with simple inverse kinematics and an "evo" value from 0 (ape) to 1 (modern human): the
+  character gradually stands taller, loses fur and changes posture. He changes clothes each time he passes behind a
+  bush, an obelisk or a phone box.
+- The camera zooms into objects to move between scenes: a spark becomes a campfire, the cave mouth goes dark, a
+  painted sun becomes the real sun.
+
+STORY
+1. 7 million years ago: an ape swings through the jungle, falls off a branch, sees stars, and stands up on two legs.
+2. 2.6 million years ago: he knocks two stones together and makes the first hand axe. A spark flies off...
+3. 1 million years ago: ...and becomes a campfire. A sabre-tooth cat creeps out of the dark; a torch drives it away.
+4. 300,000 to 70,000 years ago: the ice age — mammoths, a blizzard, people huddled around a tiny fire.
+5. 40,000 years ago: cave art — a hand stencil, a painted mammoth, a painted sun.
+6. 12,000 years ago to 57 years ago, one continuous walk: farming (a dog joins in), pushing a cart past the
+   pyramids, waving at a sailing ship, a city street, then a rocket.
+7. The Moon: one small step.
+8. Today: a toddler's first wobbly steps under the same tree the ape hung from. A butterfly lands on the child's
+   hand: "still curious". The film loops back to the start.
+
+MUSIC
+- Built sample by sample in js/music.js: marimba, glockenspiel, plucked strings, piano, pads, bass and drums with a
+  small reverb, plus sound effects (roar, fire crackle, stone clacks, dog bark, rocket rumble and more) timed to the
+  action; the track wraps into its start so the loop is seamless.
+
+FILES AND CONTROLS
+- index.html; js/ink.js (canvas, wobbly ink, crayon hatching, text), js/kit.js (shared props), js/people.js (the
+  ape-to-human rig, kid, sabre-tooth, dog, butterfly), js/world.js (trees, fire, snow, cave art, pyramids, ship,
+  city, rocket, moon), js/scenes.js (timeline and captions), js/music.js, js/main.js (playback, controls, export).
+- index.html?t=36 opens the film paused at 36 s; index.html?sheet=0,15,0.5&cols=6 shows a contact sheet.
+
+====================================================================================================
+PART 2 — HOW IT WAS PROMPTED (the requests, in order)
+====================================================================================================
+
+1. "The history of human evolution in under one minute. Draw every frame of this animation in JavaScript. Here is
+   the video reference, I pasted the video in the current app folder. I want the visuals and animation like this.
+   Also add music to this animation."
+
+2. "Make the same kind of video for human evolution. I gave the reference so you can see all things like design,
+   animation etc. Make it for humans, and don't change the dinosaur one, keep it as well."
+   -> The film above, made with Claude Opus 5.5 in Cursor. The reference video was a hand-drawn, crayon-style
+      animation used only for visual style; it is not included.

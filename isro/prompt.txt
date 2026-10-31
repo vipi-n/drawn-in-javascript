@@ -1,0 +1,70 @@
+PROMPT — "ISRO: from a bicycle in Thumba to the Moon"
+(cinematic documentary trailer, 3 min 20 s, 1920x1080, 60 fps, fully synthesized orchestral score)
+
+This file holds (1) the full production prompt that describes the finished video, so it can be recreated, and
+(2) the sequence of requests that were used to arrive at it.
+
+====================================================================================================
+PART 1 — THE PROMPT
+====================================================================================================
+
+Make a cinematic video on the history of ISRO — epic and emotional, like a documentary trailer. Go all out.
+Compose the soundtrack yourself, fully synthesized in code: no samples, no audio files, no VST instruments. Cut the
+visuals to the music. 1920x1080, 60 fps. No downloaded images or footage — every frame generated in code. Render the
+final video with the music mixed in as an MP4.
+
+FORMAT
+- 1920 x 1080, 60 fps, 200.3 s = 74 bars at 90 BPM plus a short tail; js/cues.js holds the bar-based cue points
+  shared by picture and score.
+
+LOOK
+- Illustrated, realistic-leaning scenes with a moving sky, a living sea shore and trees at the launch site, natural
+  motion for the bicycle and the bullock cart, realistic rockets and launch pads; strong, readable titles that do
+  not shake; the ISRO logo and the Indian flag at the end. Bloom, grain and vignette for a cinematic finish.
+
+STORY (in order, from js/shots1.js and js/shots2.js)
+1963: a fishing village on the magnetic equator with no rockets and no launch pad; Thumba; rocket parts carried on a
+bicycle; Vikram Sarabhai's words; the first launch -> 1969: the Indian Space Research Organisation is founded ->
+Aryabhata (1975) -> SLV-3 reaches orbit (1980) -> the APPLE satellite on a bullock cart (1981) -> the first Indian in
+space (1984) -> PSLV's failed first flight and the comeback -> the Moon and Mars -> mission control -> 2019: the
+Vikram lander's signal is lost -> hope and the rebuild -> LVM3 launches Chandrayaan-3 (2023) -> trajectory, lunar
+orbit, the descent, touchdown, the Pragyan rover -> India turns to the Sun (Aditya-L1) -> Gaganyaan -> a recap
+mosaic, the title, the flag.
+
+MUSIC
+- 90 BPM orchestral-trailer score fully synthesized in js/music.js (detuned saw string sections, synth brass and
+  bass, percussion hits, risers, a hall reverb), with hits and swells on the cue points: the first launch, the
+  founding of ISRO, PSLV ignition, the Moon and Mars, the descent climax and the touchdown finale.
+
+HOW TO REBUILD
+- Film (builds build/score.wav first if missing; --music forces a rebuild of the score):
+    node isro/tools/render.js --video [--jobs 12] [--music]      -> isro-trailer.mp4
+- Contact sheets: node isro/tools/render.js --times 1,5.5,20 | --bars 4,8.5
+- Score only: node isro/js/music.js out.wav            (Node.js + @napi-rs/canvas + FFmpeg)
+
+====================================================================================================
+PART 2 — HOW IT WAS PROMPTED (the requests, in order)
+====================================================================================================
+
+1. "Make a cinematic video on the history of ISRO. Make it epic and emotional, like a documentary trailer. Go all
+   out. Compose the soundtrack yourself, fully synthesized in code. No samples, no audio files, no VST instruments.
+   Cut the visuals to the music. 1920x1080, 60fps. No downloaded images or footage, every frame generated in code.
+   Render the final video with the music mixed in as an MP4 and save it in this repo."
+   -> First version of the trailer.
+
+2. "It's good, but make it a bit more real. The launch from the sea shore looks static — a static sea, no trees,
+   very basic. Make it more realistic, add the ISRO logo and, at the end, the Indian flag. The text in between is
+   very thin; make it thicker. The rocket and the launch pad should be realistic, like ISRO's. The bullock cart
+   carrying the rocket and the bicycle don't move naturally, and the launch and the climb into the sky don't look
+   natural either. Make it a natural-looking video."
+   -> Realistic shore, trees, launch pads and rockets; natural cart and bicycle motion; bolder text; logo and flag.
+
+3. "The attached photo is the ISRO logo, not the logo you created — replace it. This is the latest launch pad.
+   Make the sky real: when the rocket is in the sky, the sky doesn't move at all, so it looks like a static
+   background. Also the text vibrates whenever it appears; it should not vibrate."
+   -> Logo and launch pad updated, moving skies, steady titles.
+
+4. "From 2:34 to 2:38, why are there multiple clips of landing? Fix this. In the attached screenshot, improve the
+   looks and animation. When the rocket is in the sky, the sky still looks still. In the first screenshot the
+   launched rocket looks just like a light. Check and fix."
+   -> The duplicate landing shots removed and the in-flight shots reworked: the final 200 s trailer.
