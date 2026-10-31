@@ -1,0 +1,52 @@
+PROMPT — "YOU'RE ABSOLUTELY RIGHT"
+(lyric music video, 3 min 23 s, 30 fps: portrait 1080x1920, landscape 1920x1080 and a 1920x1080 "motion" cut)
+
+This file holds (1) the full production prompt that describes the finished video, so it can be recreated, and
+(2) the requests that were used to arrive at it. The chat that produced this video was not saved on this machine,
+so Part 1 was reconstructed from the code in this folder.
+
+====================================================================================================
+PART 1 — THE PROMPT
+====================================================================================================
+
+Make a funny, fast-cut lyric music video for a Suno song about a software engineer and an AI coding agent that
+answers everything with "You're absolutely right!". Draw every frame in code: big word-by-word lyric typography
+plus one small illustrated scene for each lyric moment, with every event timed to the sung words and the beat.
+
+FORMAT
+- Song: the Suno track ../ai.aifc (linked into this folder as song.aifc), 202.8 s.
+- Three cuts, all 30 fps, H.264 + AAC:
+    youre-absolutely-right.mp4             1080 x 1920 portrait          (tools/render_portrait.js)
+    youre-absolutely-right-landscape.mp4   1920 x 1080 landscape         (tools/render.js, js/)
+    youre-absolutely-right-motion.mp4      1920 x 1080 with extra motion (tools/render_motion.js, js_motion/)
+  js_portrait/ holds the portrait layouts; js_landscape_v1/ keeps the first landscape version.
+
+LOOK
+- Bold two-colour gradients that change with each song section; huge lyric words that pop in on every sung word.
+- Small UI-style illustrations: Slack, a calendar invite, the chat prompt, an IDE, a status page, a LinkedIn post,
+  a code diff, badges; a beat-driven glitch accent. Avenir for text, Menlo for code.
+
+STORY / SCENES (one illustrated scene per lyric moment, in song order)
+Title, Slack message, calendar invite, morning, the prompt, the IDE, time passing, status page, LinkedIn post,
+"fired", babysitting the agent, production, "sorry", the diff, the badge, accept, ship it, money, stand-up,
+LeetCode, juniors, code review, podcast, outage, craft, Wi-Fi, freeze, JavaScript, the context window, with the
+chorus "You're absolutely right!" returning between verses.
+
+HOW THE TIMING WORKS
+- tools/transcribe.py: faster-whisper word-level timestamps for the song -> build/words.json
+- tools/align.py: lyric alignment, beat tracking and per-frame audio features -> build/timeline.json
+- Every scene reads its word times from the timeline, so picture and song stay locked.
+
+HOW TO REBUILD
+- python tools/transcribe.py && python tools/align.py     (Python env with faster-whisper: ../tibo-roast/.venv)
+- node tools/render_portrait.js --video                   -> youre-absolutely-right.mp4
+- node tools/render.js --video                            -> youre-absolutely-right-landscape.mp4
+- node tools/render_motion.js --video                     -> youre-absolutely-right-motion.mp4
+- Previews: --times 3,20,48 (contact sheet) or --still 48.9 (one full-size frame)
+  (Node.js + @napi-rs/canvas + FFmpeg)
+
+====================================================================================================
+PART 2 — HOW IT WAS PROMPTED
+====================================================================================================
+
+Not available: the chat that produced this video was not saved on this machine.

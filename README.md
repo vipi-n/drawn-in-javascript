@@ -1,19 +1,36 @@
 # Drawn in JavaScript
 
-Two short hand-drawn animated films. Every frame is drawn live in the browser with JavaScript on an HTML canvas, and the music is synthesized in code. There are no video files, images or audio files: just code.
+Animated films drawn with JavaScript on an HTML canvas. Soundtracks are synthesized in code, and the Falcon 9 film adds spoken narration.
 
-Both films were made with **Claude Opus 5.5** in Cursor, from the prompts below.
+## Falcon 9: how a reusable rocket works
+
+[Open the JavaScript player](falcon9/index.html). The 4 minute 20 second deep dive explains the Falcon 9 booster’s ascent, stage separation, return trajectories, reentry, grid fins, landing burn, guidance, recovery, and reuse. See [the project notes](falcon9/README.md) for the build steps and technical sources.
+
+The human and dinosaur films were made with **Claude Opus 5.5** in Cursor, from the prompts below.
+
+**▶ Watch live:** [human evolution (56 s)](https://vipi-n.github.io/drawn-in-javascript/human/) · [dinosaurs to birds (47.5 s)](https://vipi-n.github.io/drawn-in-javascript/dinosaur/)
 
 | Film | Folder | Length | Story |
 |---|---|---|---|
 | **Still Curious**: the history of human evolution | [`human/`](human/) | 56 s | 7 million years ago → today |
 | **Still Here**: from dinosaurs to birds | [`dinosaur/`](dinosaur/) | 47.5 s | Triassic → asteroid → the robin in your garden |
+| **From Beads to Bits**: the evolution of computers | [`computer/`](computer/) | 66 s | abacus → punched cards → computers → cloud and AI |
+| **Gone Fishing**: a day by the river and in the jungle | [`fishing/`](fishing/) | 120 s | morning walk → fishing and a big catch → jungle camp lunch → sunset dessert → sleeping under the stars |
+
+## From Beads to Bits: the evolution of computers
+
+Open the [JavaScript player](computer/index.html).
+
+Inspired by the crayon animation in `gVuAJ_uw1CUtQX3t.mp4`, the film uses warm paper, uneven ink outlines, textured color, handwritten dates, and a small abacus bead that comes alive. The camera follows that bead along a winding path, changing height and scale as it explores the abacus, Jacquard punched cards, Babbage's Analytical Engine design, an electronic computer, the transistor, integrated circuit, microprocessor, personal computer, World Wide Web, smartphone, and today's connected computers and AI. The final image shows a person at a laptop connected to servers and a clearly labelled AI chip. The score is an original 120 BPM electronic piece; its analog pulses gain drums and a brighter lead as the machines become digital.
+
+All graphics are drawn in [`computer/js/film.js`](computer/js/film.js) and [`computer/js/world.js`](computer/js/world.js) with the crayon toolkit in [`computer/js/ink.js`](computer/js/ink.js). The score is synthesized in [`computer/js/music.js`](computer/js/music.js), and [`computer/tools/render.js`](computer/tools/render.js) produces the video and WAV offline with a local Canvas implementation and FFmpeg.
 
 ---
 
 ## Still Curious: human evolution in under a minute
 
 ### Prompt
+
 > The history of human evolution in under one minute. Draw every frame of this animation in JavaScript. Here is the video reference, I pasted the video in the current app folder. I want the visuals and animation like this. Also add music to this animation.
 
 A follow-up prompt:
@@ -63,11 +80,12 @@ A follow-up prompt:
 You don't need to install anything and you don't need a server.
 
 1. Download or clone this repo:
-   - With git: `git clone https://github.com/YOUR-USERNAME/REPO-NAME.git`
+   - With git: `git clone https://github.com/vipi-n/drawn-in-javascript.git`
    - Without git: on the repo page, click **Code** → **Download ZIP**, then unzip it.
 2. Open a film in a browser (Chrome is recommended):
    - Human evolution: double-click `human/index.html`.
    - Dinosaurs: double-click `dinosaur/index.html`.
+   - Computers: double-click `computer/index.html`.
 
    Or from a terminal:
    ```bash
@@ -75,7 +93,7 @@ You don't need to install anything and you don't need a server.
    xdg-open human/index.html    # Linux
    start human\index.html       # Windows
    ```
-3. Click the **play** button. The music is generated the first time you press play, which takes a few seconds.
+3. Wait for the music to finish generating, then click **play**.
 
 An internet connection is only used to load the handwriting font (Patrick Hand from Google Fonts). Offline, the captions fall back to a normal font and everything else still works.
 
@@ -134,4 +152,4 @@ dinosaur/
 
 ---
 
-Made with Claude Sonnet 5.5
+The human and dinosaur films were made with Claude Opus 5.5 in Cursor.

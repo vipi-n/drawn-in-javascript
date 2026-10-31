@@ -1,0 +1,62 @@
+PROMPT — "AMOEBA: the life cycle of a single cell"  (animated short, ~65 s, 1:1 square 1080x1080, 24 fps)
+
+STYLE
+Colourful editorial scientific illustration brought to life with motion design. Flat colour shapes finished with fine
+pencil hatching, stippled granules and a warm paper grain over every frame, so it feels hand-printed rather than 3D.
+Two visual modes alternate:
+  1) full colour illustration: pastel pond landscapes, luminous aqua microscope water, peach/coral amoeba with a plum
+     nucleus, sky-blue vacuoles, golden diatoms, green desmids and volvox, pink and violet bacteria;
+  2) "x-ray" line-art mode on a near-black night background: cream outlines plus thin blueprint-blue compass
+     construction (circles, arcs, tick marks, crosshairs) drawn live by a glowing pen tip.
+Thin red diagram overlays explain movement: dashed trails with tick marks, arrows, angle arcs, scale bars.
+Circular callout lenses with tangent connector lines zoom into details. Small Didot-italic chapter captions sit
+bottom-left; no narration.
+
+MOTION DESIGN
+- Geometry is constructed on screen (arcs sweep, ticks appear one by one, a pen spark leads every line).
+- Colour "develops" over line drawings, and illustrations dissolve into line-art diagrams and back.
+- Slow push-ins and pull-backs, time-lapse sections (fast pseudopods, cycling light, tally marks counting time).
+- Organic squash-and-stretch on the cell: pseudopods bulge out with smooth fillets, granules stream forward,
+  the contractile vacuole swells and pops on every bar of music.
+- Cuts land on the beat; the split into two cells lands on a downbeat.
+
+STORY / SHOT LIST
+0–5 s    Black. A gold point glows. A blue microscope reticle is drawn with a compass (circle, crosshair, 72 ticks),
+         plus a vesica piscis (two overlapping circles, foreshadowing division). A line-drawn amoeba grows out of the
+         point, colour floods into it. Title "AMOEBA", subtitle "the life cycle of a single cell".
+5–11 s   Cross-section of a sunny pond: sky bands, hills with lollipop trees, reeds and cattails, lily pads with a pink
+         water lily, dragonfly, fish, bubbles, a decaying leaf on the bottom. Camera pushes in to the leaf; a callout
+         lens opens with a red "0.5 mm" scale bar, showing the microscopic world, then expands to fill the frame.
+11–20 s  Microscope world. The amoeba crawls on pseudopodia, granules streaming; red dashed trail, heading arrow and
+         angle arc. Then x-ray mode: labelled anatomy (nucleus, contractile vacuole, food vacuole, pseudopod) with blue
+         construction rings. Colour returns.
+20–27 s  Feeding: a green Chlamydomonas swims close; two pseudopods reach around it (red angle diagram), close, and
+         a food vacuole forms. Callout lens: enzyme granules fuse with the vacuole, the alga shrinks and browns,
+         golden nutrients diffuse out. The contractile vacuole squirts water out with blue ripple arcs.
+27–32 s  Growth time-lapse: prey streams in, the cell swells from a dashed red ghost of its old size; red size bracket,
+         tally marks counting hours, light cycling.
+32–45 s  Binary fission. The cell rounds up, turns to x-ray: chromosomes condense, a blue lens-shaped spindle is drawn
+         between two glowing poles, chromosomes align and separate, two nuclei form. Blue vesica circles mark the two
+         future cells; the membrane pinches into a waist and parts on the downbeat with a ring burst. Colour returns.
+         A gold division tree grows top-right (1, 2, 4, 8, 16, 32) as the camera pulls back over a doubling colony.
+45–54 s  Drought: the pond time-lapses dry (red sun-path arc with ticks, falling water-level marks, cracking mud).
+         Under the microscope the colours turn sepia, cracks creep in, the amoeba pulls in its pseudopods, becomes a
+         sphere, and blue rings construct a layered cyst wall; nuclei multiply inside. Night: star-trail arcs, crescent
+         moon, the cyst glowing faintly in cracked ground, tally marks counting days.
+54–61 s  Rain: top-down cracked mud, ripple rings multiply, cracks fill with water, the surface floods blue. Colour
+         blooms back from the centre; the cyst wall cracks, shell fragments drift away and six young amoebae crawl
+         out in all directions along red vector arrows.
+61–67 s  The view closes into the blue ring. Five station badges pop in (crawling, feeding, dividing, cyst,
+         emerging) with chevrons between them; a gold dot travels the full cycle lighting each one. "AMOEBA / one
+         cell, an endless cycle". The ring shrinks back to the single glowing point from the opening. Fade out.
+
+MUSIC (original, no samples)
+96 BPM, D major, gentle and curious with a playful science-documentary feel: kalimba ostinato, soft-mallet marimba
+theme, pizzicato strings, warm analogue pad, glassy celesta bells, light shaker/snap groove, soft kick.
+Dynamics follow the story: sparkly intro, bouncy pond and crawl, dimmed filtered pad in x-ray, playful pizzicato for
+feeding, ticking woodblock tally and a riser into fission, slow heartbeat under mitosis, a bright bell hit on the
+split and rising bell notes for every doubling, then drought turns modal (E minor / C lydian) with wind, crackles,
+crickets and a lullaby. Rain becomes pentatonic droplet plinks, and colour returning brings the full theme back,
+resolving on a final low D as the ring returns to a point.
+Sound design: bubbly "bloop" for every contractile-vacuole squirt, a "gulp" when food is engulfed, soft pops at each
+division, pen-tip shimmer while geometry is drawn, whooshes into callouts.

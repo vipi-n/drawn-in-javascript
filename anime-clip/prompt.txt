@@ -1,0 +1,45 @@
+PROMPT — "ANIME CLIP: a live-action clip redrawn as anime"
+(video edit, 14.3 s, 1920x1080, 24 fps, original audio + added sound effects)
+
+This file holds (1) the full production prompt that describes the finished edit, so it can be recreated, and
+(2) the sequence of requests that were used to arrive at it.
+
+====================================================================================================
+PART 1 — THE PROMPT
+====================================================================================================
+
+Turn the short live-action clip VyaJNTeA3n-oHRst.mp4 into a pure anime montage. Count the characters in the clip
+and give each new character's shot the look of a different anime show (Attack on Titan, Fullmetal Alchemist:
+Brotherhood, Demon Slayer, Naruto Shippuden, Vinland Saga, Cowboy Bebop, Jujutsu Kaisen, My Hero Academia, Samurai
+Champloo, The Rising of the Shield Hero, Yu Yu Hakusho). It must look like real anime characters drawn by the
+show's studio, not a filter laid over the video. Go all in.
+
+PIPELINE (the Python files in this folder; working frames live in /tmp/an, models in /tmp/m)
+1. Resample the source to 24 fps frames (343 frames) -> /tmp/an/src.
+2. AnimeGANv3 (Hayao and Shinkai ONNX models) per shot -> /tmp/an/gan_h, gan_s; temporal.py blends neighbouring
+   frames with Farneback optical flow so the result does not flicker -> gan_t.
+3. diffuse.py: Stable Diffusion 1.5 (Anything v5) + ControlNet lineart + LCM-LoRA img2img (strength 0.62,
+   896x504, every 2nd frame as a keyframe) redraws real anime faces and line work; temporal_diff.py blends -> diff_t.
+4. looks.py: one look per show (mean-shift flattening, colour quantising, ink contours, grading, bloom, speed lines,
+   show-style titles and kanji) and impact frames on cuts; lib.py holds the shared helpers.
+5. sfx.py adds whooshes and impacts; render_all.py renders every frame in parallel; FFmpeg encodes the MP4 with
+   the original audio. preview.py and dbg.py make quick checks.
+
+====================================================================================================
+PART 2 — HOW IT WAS PROMPTED (the requests, in order)
+====================================================================================================
+
+1. "You are a video editor. Check VyaJNTeA3n-oHRst.mp4 — I want you to make this video an anime clip. For each new
+   character in this clip use a new anime show theme, like Attack on Titan, Fullmetal Alchemist: Brotherhood,
+   Demon Slayer, Naruto: Shippuden, Vinland Saga, Cowboy Bebop, Jujutsu Kaisen, My Hero Academia, Samurai
+   Champloo, The Rising of the Shield Hero, Yu Yu Hakusho. Check how many characters there are in the clip and use
+   the themes above. I want it to be pure anime, just like these shows look. Go all in."
+   -> First version: AnimeGAN stylisation with one look per show.
+
+2. "It still doesn't look like anime — it looks like you put an anime-style blanket over the video. Make it real
+   anime characters."
+   -> Added the Stable Diffusion + ControlNet redraw (step 3 above).
+
+3. "Once done, add a small @vipinxtwt watermark." Later: "Don't add these texts, remove this" and "Remove
+   @vipinxtwt."
+   -> The extra on-screen text and the watermark were removed from the final edit.

@@ -1,0 +1,51 @@
+PROMPT — "ANT: the life cycle"
+(animated short, 90.7 s, 1080x1920 portrait, 30 fps, sampled orchestra + real recordings)
+
+This file holds (1) the full production prompt that describes the finished video, so it can be recreated, and
+(2) the requests that were used to arrive at it. The chat that produced this film was not saved on this machine,
+so Part 1 was reconstructed from the code in this folder.
+
+====================================================================================================
+PART 1 — THE PROMPT
+====================================================================================================
+
+Make a portrait (Instagram Reel) motion-design film about the life cycle of an ant colony: the nuptial flight, a
+queen founding a new nest, the four stages egg -> larva -> pupa -> adult, the colony as a busy city, and new
+queens leaving to start the cycle again. Every frame is drawn in code with the cicada-motion engine; the camera
+never stops moving. Original orchestral score plus real CC0 sound recordings, locked to the picture by one cue sheet.
+
+FORMAT
+- 1080 x 1920, 30 fps, 90.67 s = 34 bars at 90 BPM (1 bar = 2.667 s); every scene starts on a bar line.
+- js/cues.js is the single clock for picture AND music.
+
+STORY / SHOT LIST (bars, from js/cues.js)
+- 0–4    flight: a summer evening after rain; winged queens and males pour out and rise; title.
+- 4–7    found: a mated queen lands, stores sperm for life, snaps off her wings and digs a sealed chamber.
+- 7–11   egg (stage 1): she lays eggs; inside an egg the embryo forms; fertilised = female, unfertilised = male.
+- 11–16  larva (stage 2): hatching, fed mouth-to-mouth, four moults, a look inside; diet decides worker or queen.
+- 16–21  pupa (stage 3): a silk cocoon; the body dissolves and rebuilds; colour comes in.
+- 21–25  adult (stage 4): sisters cut her free; a pale callow darkens; full anatomy.
+- 25–30  colony: the nest city — chambers, castes, jobs by age, a pheromone trail, the population grows.
+- 30–34  cycle: years later new winged queens leave; the life-cycle ring and lifespans; end card.
+
+MUSIC AND SOUND (js/music/)
+- 90 BPM, E minor -> G major. Real CC0 orchestra (VSCO-2 CE samples: strings sustain/tremolo/pizzicato/spiccato,
+  harp, flute, clarinet, bassoon, horns, glockenspiel, marimba, xylophone, piano, timpani, cymbals, gong, bass drum,
+  hand drums, log drums) plays an original main theme ("Colony") with one musical world per scene: airy harp and
+  flute for the flight, log drums for the dig, music box for the egg, marimba for the larva, tremolo mystery for
+  the pupa, heroic horns for the adult, driving spiccato for the colony, the grand theme ending in G major.
+- Real CC0 recordings (BigSoundBank) for ambience and foley, plus synthesized hum, whooshes, risers, pops and
+  cracks. Convolution hall, loudness ridden along the film, -15 LUFS, true-peak limited.
+
+HOW TO REBUILD
+- Samples are shared with ../cicada-motion/assets (assets/vsco and assets/sfx here link to them): fetch the
+  VSCO-2 CE samples with ../frog-motion/tools/fetch_vsco.js and the recordings with ../cicada-motion/tools/fetch_sfx.sh.
+- Score:   node ant-motion/js/music/index.js [out.wav]
+- Film:    node ant-motion/tools/render.js --video [--jobs 12] [--music]   -> ant-life-cycle.mp4
+- Checks:  node ant-motion/tools/render.js --at 12.5   |   --times 1,5.5,20 --cols 3 --cell 360
+
+====================================================================================================
+PART 2 — HOW IT WAS PROMPTED
+====================================================================================================
+
+Not available: the chat that produced this film was not saved on this machine.

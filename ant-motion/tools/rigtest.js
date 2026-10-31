@@ -1,0 +1,20 @@
+// Rig check sheet: node tools/rigtest.js [out.png]
+const path = require('path'), fs = require('fs');
+const core = require('../js/core');
+core.fonts();
+const ANT = require('../js/ant'), BR = (() => { try { return require('../js/brood'); } catch (e) { return null; } })();
+const cv = core.C.createCanvas(1600, 1100), ctx = cv.getContext('2d');
+ctx.fillStyle = '#2a1c12'; ctx.fillRect(0, 0, 1600, 1100);
+const row = (y) => { ctx.strokeStyle = 'rgba(255,200,140,.25)'; ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(1600, y); ctx.stroke(); };
+[260, 560].forEach(row);
+ANT.draw(ctx, 260, 260, 1.4, { caste: 'worker', phase: .1, ant: .2 });
+ANT.draw(ctx, 760, 260, 1.4, { caste: 'worker', phase: .35, xray: 1, hl: { crop: 1 } });
+ANT.draw(ctx, 1260, 260, 1.4, { caste: 'worker', phase: .6, callow: 1 });
+ANT.draw(ctx, 330, 560, 1.2, { caste: 'queen', phase: .2, wings: 1 });
+ANT.draw(ctx, 850, 560, 1.2, { caste: 'queen', xray: 1, hl: { sperm: 1 } });
+ANT.draw(ctx, 1300, 560, 1.2, { caste: 'male', phase: .4, wings: 1 });
+ANT.draw(ctx, 360, 900, 1.2, { caste: 'queen', wings: 1, spread: 1, flap: .1 });
+ANT.draw(ctx, 860, 900, 1.2, { caste: 'male', wings: 1, spread: 1, flap: .6 });
+if (BR) BR.sheet && BR.sheet(ctx, 1100, 760);
+const out = process.argv[2] || path.join(__dirname, '..', 'build', 'rig.png');
+fs.writeFileSync(out, cv.toBuffer('image/png')); console.log(out);
