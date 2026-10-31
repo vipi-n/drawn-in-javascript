@@ -1,0 +1,54 @@
+PROMPT — "HISTORY OF VIDEO GAMES"
+(animated short, 128 s, 1080x1080, 60 fps, sampled orchestra + 8-bit chip voices)
+
+This file holds (1) the full production prompt that describes the finished video, so it can be recreated, and
+(2) the requests that were used to arrive at it. The chat that produced this film was not saved on this machine,
+so Part 1 was reconstructed from the code in this folder.
+
+====================================================================================================
+PART 1 — THE PROMPT
+====================================================================================================
+
+Make a 128-second motion-design history of video games, drawn entirely in code, from 1958 oscilloscope tennis to
+today's esports arenas. Draw each era in its own visual language (oscilloscope dots, vector lines, a wood-grain TV,
+8-bit pixels, Mode 7, early 3D polygons, modern landscapes) with short fact cards, and end with a mosaic of every era
+collapsing back into a single dot. Build it on the cicada-motion engine and cue sheet, with an original orchestral
+score that blends with chiptune voices for the game eras.
+
+FORMAT
+- 1080 x 1080, 60 fps, 128 s = 48 bars at 90 BPM (1 bar = 2.667 s); js/cues.js is the single clock for picture
+  AND music; every scene starts on a bar line.
+
+STORY / SHOT LIST (bars, from js/cues.js)
+- 0–3    intro: a CRT switches on in the dark; the title assembles in pixels; PRESS START.
+- 3–6    1958 oscilloscope tennis: a green dot arcing over a net.
+- 6–8    1962 Spacewar!: vector starships orbit a star on a round PDP-1 screen.
+- 8–11   1972 Pong on a wood-grain TV, with the Odyssey overlay.
+- 11–13  1977: a cartridge drops into the Atari 2600; colour arrives.
+- 13–17  the golden age of arcades: Space Invaders, Pac-Man, Donkey Kong.
+- 17–19  1983: the crash — cartridges buried in a night desert.
+- 19–23  revival: Tetris, the NES and a side-scroller, the Game Boy.
+- 23–25  the 16-bit console wars: Mode 7 versus speed.
+- 25–29  the leap into 3D: Doom, PlayStation, Nintendo 64.
+- 29–33  online: PS2, Xbox, World of Warcraft, a planet connected.
+- 33–37  games for everyone: Wii, smartphones, Minecraft.
+- 37–42  today: an esports arena, then a breathtaking modern landscape and the numbers.
+- 42–48  epilogue: every era in a mosaic, back to the single dot, THANK YOU FOR PLAYING.
+
+MUSIC AND SOUND (js/music/)
+- 90 BPM, D major (a B-minor shadow for the crash, D minor for Doom). A real CC0 orchestra (VSCO-2 CE samples:
+  strings sustain/tremolo/pizzicato/spiccato, harp, flute, clarinet, horns, glockenspiel, marimba, xylophone, piano
+  and percussion) plus synthesized 8-bit chip voices (pulse, triangle, noise) with a ping-pong echo.
+
+HOW TO REBUILD
+- Samples are shared with ../cicada-motion/assets (the assets link here points to it): fetch the VSCO-2 CE samples
+  with ../frog-motion/tools/fetch_vsco.js.
+- Score:  node js/music/index.js build/score.wav        (run inside video-games/)
+- Film:   node tools/render.js --video [--jobs 14] [--resume]   -> history-of-video-games.mp4 (needs build/score.wav)
+- Checks: node tools/render.js --at 12.5 | --times 1,5,20 --cols 3 --cell 480 | --clip a b
+
+====================================================================================================
+PART 2 — HOW IT WAS PROMPTED
+====================================================================================================
+
+Not available: the chat that produced this film was not saved on this machine.
