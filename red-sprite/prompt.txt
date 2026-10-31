@@ -1,0 +1,36 @@
+PROMPT — "RED SPRITES OVER THE VILLAGE — painted with code"
+(living painting: interactive scene, still export and a 9 s video at 1080x1350, 30 fps; silent)
+
+This file holds (1) the full production prompt that describes the finished piece, so it can be recreated, and
+(2) the requests that were used to arrive at it. The chat that produced it was not saved on this machine, so
+Part 1 was reconstructed from the code in this folder.
+
+====================================================================================================
+PART 1 — THE PROMPT
+====================================================================================================
+
+Paint, entirely in code, red sprites — the rare red lightning that flashes high above thunderstorms — glowing over
+a sleeping village at night. A deep night sky with clouds, a distant thunderstorm below the horizon, the red sprite
+halo with tendrils reaching down, and village houses, a church and trees with warm windows; finished with paper
+texture, bloom and colour grading so it reads as a painting. Everything is deterministic from a seed. Also make a
+slow-motion clip of the sprite igniting: the storm flashes below the horizon, the halo descends, streamers crack
+downward from each head, and the scene settles into the still picture while the camera slowly pushes in.
+
+FORMAT
+- Design size 819 x 1024 (4:5); still PNG export at any width (output/red-sprites.png, red-sprites-large.png).
+- Video: 1080 x 1350, 30 fps, 9 s (output/red-sprites-live.mp4).
+
+FILES
+- js/sky.js (night sky, clouds, storm), js/sprite.js (the sprites), js/village.js (houses, church, trees),
+  js/post.js (paper, bloom, grading), js/anim.js (the ignition clip), js/main.js and js/util.js.
+
+HOW TO REBUILD (needs Google Chrome; set CHROME to another browser path if needed, and FFmpeg for the video)
+- Live view: open index.html.
+- Still: node red-sprite/tools/render.mjs
+- Video: node red-sprite/tools/video.mjs [--w=1080] [--fps=30] [--duration=9] [--seed=7] [--out=output/red-sprites-live.mp4]
+
+====================================================================================================
+PART 2 — HOW IT WAS PROMPTED
+====================================================================================================
+
+Not available: the chat that produced this piece was not saved on this machine.

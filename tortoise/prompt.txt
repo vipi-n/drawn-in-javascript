@@ -1,0 +1,56 @@
+PROMPT — "THE TORTOISE AND THE HARE: a cut-paper retelling"
+(animated short, 60 s, 1080x1080, 24 fps, original synthesized score)
+
+This file holds (1) the full production prompt that describes the finished video, so it can be recreated, and
+(2) the sequence of requests that were used to arrive at it.
+
+====================================================================================================
+PART 1 — THE PROMPT
+====================================================================================================
+
+Retell the real fable of the tortoise and the hare in 60 seconds, drawn frame by frame in JavaScript as a cut-paper
+animation. Take only the animation style from the reference video erpSggiWfckB7Mrl.mp4 (not its balloons or any
+other content; the reference is not included). The hare is fast and overconfident, naps under a tree and wakes too
+late; the tortoise keeps a slow, steady pace and wins. Add an original score.
+
+FORMAT
+- 1080 x 1080, 24 fps, 60 s.
+
+LOOK
+- Flat colour paper pieces with fabric patterns, soft paper shadows, fine ink edges with a gentle line boil,
+  red-pencil sketches and a paper-grain overlay on cream paper (#f3eee3).
+- Sky, hills, ground, trees and the race course are all flat paper cut-outs; dusk slowly falls during the nap.
+- Both animals are posed from parameters (stride cycle, neck stretch, head lift, mood, blinks).
+
+STORY
+1. Title; the hare hops in laughing and challenges the tortoise.
+2. Ready, set — at 15 s the hare explodes off the start line.
+3. Far ahead, he looks back and chuckles, strolls to a tree, yawns and curls up for a nap.
+4. The tortoise keeps one steady, unbroken pace past the sleeping hare.
+5. The hare wakes with a start and sprints, too late.
+6. At 50 s the tortoise breaks the tape; calm victory.
+
+MUSIC
+- An original score synthesized sample by sample in js/music.js: 96 BPM, 4/4 (one bar = 2.5 s), so the start (15 s)
+  and the finish (50 s) land on bar lines; plucks, marimba, bells, bass, reed, pad, brass, light percussion, comic
+  glides and whooshes.
+
+HOW TO REBUILD
+- Live player: open index.html.
+- Video: node tortoise/tools/render.js --video   -> tortoise-and-hare.mp4 + original-score.wav
+- Checks: node tortoise/tools/render.js --at 12.5 | --sheet 0,60,4   (Node.js + @napi-rs/canvas + FFmpeg)
+
+====================================================================================================
+PART 2 — HOW IT WAS PROMPTED (the requests, in order)
+====================================================================================================
+
+1. "I want to make a video of the story of the tortoise and the rabbit, where the tortoise won the race. First tell
+   me if you know that story."
+   -> The fable retold briefly.
+
+2. "I don't want to use this balloon and everything from the reference I gave. Use that kind of animation in my
+   video — you don't need to take everything from that video, just how the animation is done. I want the real
+   story. You can polish the real story. You know the real story, right?"
+
+3. "You need to use similar animation to erpSggiWfckB7Mrl.mp4."
+   -> The cut-paper film above.
